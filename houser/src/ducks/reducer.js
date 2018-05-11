@@ -2,7 +2,7 @@ const initial_state = {
     name: '',
     address: '',
     city: '',
-    state: '',
+    st: '',
     zipcode: ''
 }
 
@@ -33,10 +33,10 @@ export function update_city(city) {
     }
 }
 
-export function UPDATE_STATE(state) {
+export function UPDATE_STATE(st) {
     return {
         type: UPDATE_STATE,
-        payload: state
+        payload: st
     }
 }
 
@@ -47,7 +47,7 @@ export function UPDATE_ZIPCODE(zipcode) {
     }
 }
 
-export default reducer(state=initial.state){
+export default reducer(state=initial.state, action){
     switch(action.type){
         case UPDATE_NAME:
         return Object.assign({},state, {name: action.payload});
@@ -56,7 +56,7 @@ export default reducer(state=initial.state){
         case UPDATE_CITY:
         return Object.assign({},state, {city: action.payload});
         case UPDATE_STATE:
-        return Object.assign({},state, {state: action.payload});
+        return Object.assign({},state, {st: action.payload});
         case UPDATE_ZIPCODE:
         return Object.assign({},state, {zipcode: action.payload});
         default:

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
-import {update_name, update_address, update_city, update_state, update_zipcode} from '../../../ducks/reducer';
+import {update_name, update_address, update_city, update_state, update_zipcode} from '../../ducks/reducer';
 import { connect } from 'react-redux';
 
 class Wizard extends Component{
@@ -63,12 +63,12 @@ class Wizard extends Component{
 }
 
 function mapStateToProps(state){
-  const {name, address, city, state, zipcode} = state;
+  const {name, address, city, st, zipcode} = state;
   return{
     name,
     address,
     city,
-    state,
+    st,
     zipcode
   }
 }

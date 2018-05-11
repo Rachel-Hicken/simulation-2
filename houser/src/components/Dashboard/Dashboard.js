@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-class Dashboard extends Component{
+export default class Dashboard extends Component{
   constructor(){
     super()
     this.state={
