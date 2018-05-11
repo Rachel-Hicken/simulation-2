@@ -17,6 +17,8 @@ app.use(express.static(`${__dirname}/build`));
 //         app.set('db', dbInstance)
 //     });
 
+app.get('/', controller.readAll);
+
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
     console.log(`Server is listening to port ${port}`)

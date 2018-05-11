@@ -1,17 +1,19 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import {update_name, update_address, update_city, update_state, update_zipcode} from '../../../ducks/reducer';
+import { connect } from 'react-redux';
 
-export default class Wizard extends Component{
-  constructor(){
-    super()
-    this.state={
-      name: '',
-      address: '',
-      city: '',
-      state: '',
-      zipcode: ''
-    }
-  }
+class Wizard extends Component{
+  // constructor(){
+  //   super()
+  //   this.state={
+  //     name: '',
+  //     address: '',
+  //     city: '',
+  //     state: '',
+  //     zipcode: ''
+  //   }
+  // }
   nameHandler(val){
     this.setState({
       name: val
@@ -59,3 +61,16 @@ export default class Wizard extends Component{
     )
   }
 }
+
+function mapStateToProps(state){
+  const {name, address, city, state, zipcode} = state;
+  return{
+    name,
+    address,
+    city,
+    state,
+    zipcode
+  }
+}
+
+export default connect(mapStateToProps,{update_name, update_address, update_city, update_state, update_zipcode})(Wizard)

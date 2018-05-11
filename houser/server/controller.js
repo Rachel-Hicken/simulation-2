@@ -1,6 +1,6 @@
 module.exports ={
 
-    read: (req,res,next)=>{
+    readAll: (req,res,next)=>{
         const dbInstance = req.app.get('db');
         console.log(req.body)
         dbInstance.read_houses()
